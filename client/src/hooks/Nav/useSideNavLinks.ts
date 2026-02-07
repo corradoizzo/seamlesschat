@@ -90,7 +90,7 @@ export default function useSideNavLinks({
         Component: PanelSwitch,
       });
     }
-
+/*
     if (
       endpointsConfig?.[EModelEndpoint.agents] &&
       hasAccessToAgents &&
@@ -105,7 +105,8 @@ export default function useSideNavLinks({
         Component: AgentPanelSwitch,
       });
     }
-
+*/
+/*
     if (hasAccessToPrompts) {
       links.push({
         title: 'com_ui_prompts',
@@ -115,7 +116,7 @@ export default function useSideNavLinks({
         Component: PromptsAccordion,
       });
     }
-
+*/
     if (hasAccessToMemories && hasAccessToReadMemories) {
       links.push({
         title: 'com_ui_memories',
@@ -125,7 +126,7 @@ export default function useSideNavLinks({
         Component: MemoryPanel,
       });
     }
-
+/*
     if (
       interfaceConfig.parameters === true &&
       isParamEndpoint(endpoint ?? '', endpointType ?? '') === true &&
@@ -140,7 +141,7 @@ export default function useSideNavLinks({
         Component: Parameters,
       });
     }
-
+*/
     links.push({
       title: 'com_sidepanel_attach_files',
       label: '',
@@ -158,7 +159,7 @@ export default function useSideNavLinks({
         Component: BookmarkPanel,
       });
     }
-
+/*
     if (
       (hasAccessToUseMCPSettings && availableMCPServers && availableMCPServers.length > 0) ||
       hasAccessToCreateMCP
@@ -171,7 +172,7 @@ export default function useSideNavLinks({
         Component: MCPBuilderPanel,
       });
     }
-
+*/
     links.push({
       title: 'com_sidepanel_hide_panel',
       label: '',
