@@ -163,7 +163,7 @@ const Conversations: FC<ConversationsProps> = ({
   const { favorites, isLoading: isFavoritesLoading } = useFavorites();
   const isSmallScreen = useMediaQuery('(max-width: 768px)');
   const convoHeight = isSmallScreen ? 44 : 34;
-  const showAgentMarketplace = useShowMarketplace();
+  // const showAgentMarketplace = useShowMarketplace();
 
   // Fetch active job IDs for showing generation indicators
   const { data: activeJobsData } = useActiveJobs();
@@ -173,8 +173,12 @@ const Conversations: FC<ConversationsProps> = ({
   );
 
   // Determine if FavoritesList will render content
+  // NOTE (2026-02):
+// Agent Marketplace visibility was intentionally removed from the
+// conversations sidebar to simplify the UI.
+// Re-enable by reintroducing `showAgentMarketplace` into this condition.
   const shouldShowFavorites =
-    !search.query && (isFavoritesLoading || favorites.length > 0 || showAgentMarketplace);
+    !search.query && (isFavoritesLoading || favorites.length > 0);
 
   const filteredConversations = useMemo(
     () => rawConversations.filter(Boolean) as TConversation[],
